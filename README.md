@@ -1,5 +1,7 @@
 # ClickGames-Humanity-001
 
+You can play the game online here: https://dudy.github.io/ClickGames-Humanity-001/game
+
 ## Project setup
 ```
 yarn install
