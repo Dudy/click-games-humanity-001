@@ -5,7 +5,6 @@ const execa = require("execa");
     try {
       await execa("git", ["checkout", "--orphan", "gh-pages"]);
       console.log("Building...");
-      await execa("yarn", ["clean"]);
       await execa("yarn", ["build"]);
       await execa("git", ["--work-tree", "dist", "add", "--all"]);
       await execa("git", ["--work-tree", "dist", "commit", "-m", "gh-pages"]);
