@@ -1,5 +1,3 @@
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-      ? '/ClickGames-Humanity-001/'
-      : '/'
-  }
+    publicPath: '/ClickGames-Humanity-001/'
+}
