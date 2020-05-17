@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/ClickGames-Humanity-001/'
+    publicPath: '/click-games-humanity-001/'
 }

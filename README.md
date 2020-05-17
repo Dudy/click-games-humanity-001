@@ -1,6 +1,6 @@
-# ClickGames-Humanity-001
+# click-games-humanity-001
 
-You can play the game online here: https://dudy.github.io/ClickGames-Humanity-001/game
+You can play the game online here: https://dudy.github.io/click-games-humanity-001/game
 
 ## Project setup
 ```
