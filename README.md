@@ -1,6 +1,6 @@
 # click-games-humanity-001
 
-You can play the game online here: https://dudy.github.io/click-games-humanity-001/game
+You can play the game online here: https://dudy.github.io/click-games-humanity-001/#/game
 
 ## Project setup
 ```
@@ -30,6 +30,12 @@ yarn run lint
 ### Run your unit tests
 ```
 yarn run test:unit
+```
+
+### Deploy the game at Github pages
+
+```
+yarn deploy:github
 ```
 
 ### Customize configuration
