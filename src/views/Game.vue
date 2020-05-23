@@ -1,6 +1,15 @@
 <template>
   <div class="game">
-    <div>
+    <b-container>
+      <b-row>
+        <b-col sm="10">
+        </b-col>
+        <b-col sm="2">
+          time: {{ time }}
+        </b-col>
+      </b-row>
+    </b-container>
+    <b-container>
       <b-tabs content-class="mt-3">
         <b-tab title="Population" active>
           <Population />
@@ -14,8 +23,11 @@
         <b-tab title="Occupation">
           <Occupation />
         </b-tab>
+        <b-tab title="Research">
+          <Research />
+        </b-tab>
       </b-tabs>
-    </div>
+    </b-container>
     <Message />
   </div>
 </template>
@@ -26,6 +38,8 @@ import Population from "@/components/Population.vue";
 import Housing from "@/components/Housing.vue";
 import Production from "@/components/Production.vue";
 import Occupation from "@/components/Occupation.vue";
+import Research from "@/components/Research.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "Game",
@@ -34,7 +48,8 @@ export default {
     Population,
     Housing,
     Production,
-    Occupation
+    Occupation,
+    Research
   },
   data: function() {
     return {
@@ -48,6 +63,9 @@ export default {
       }, 1000);
     },
   },
+  computed: mapState({
+    time: state => state.time
+  }),
   created() {
     this.initTicker();
   },
@@ -57,19 +75,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style>
+  div.row {
+    margin-bottom: 5px;
+  }
 </style>

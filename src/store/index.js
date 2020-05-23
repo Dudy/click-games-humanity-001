@@ -6,12 +6,18 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         message: null,
+        time: 0,
         numberOfHouses: 1,
-        numberOfPeople: 1,
+        numberOfPeople: 1.0,
         amountOfWood: 0.0,
         costOfHouse: 10,
         numberOfLumberjacks: 0,
-        woodproduction: 0.0
+        woodproduction: 0.0,
+        reproductionRate: 0.05,
+
+        housing: {
+          level: 0
+        }
     },
     mutations: {
         addPeople(state, number) {
@@ -33,7 +39,7 @@ export default new Vuex.Store({
             state.amountOfWood += amount
         },
         addLumberjack(state) {
-            if (state.numberOfLumberjacks < state.numberOfPeople) {
+            if (state.numberOfLumberjacks < Math.floor(state.numberOfPeople)) {
                 state.numberOfLumberjacks += 1
                 state.woodproduction += 0.1
             } else {
@@ -42,6 +48,13 @@ export default new Vuex.Store({
         },
         tick(state) {
             state.amountOfWood += state.woodproduction
+            if (state.numberOfPeople * (1 + state.reproductionRate) <= state.numberOfHouses * 10) {
+              state.numberOfPeople *= 1 + (state.reproductionRate)
+            } else {
+              state.numberOfPeople = state.numberOfHouses * 10
+            }
+            console.log(`you have ${state.numberOfPeople} people`)
+            state.time += 1
         },
         setMessage(state, message) {
             state.message = message
