@@ -35,10 +35,10 @@
 <script>
 import Message from "@/components/Message.vue";
 import Population from "@/components/Population.vue";
-import Housing from "@/components/Housing.vue";
+import Housing from "@/components/housing/Housing.vue";
 import Production from "@/components/Production.vue";
 import Occupation from "@/components/Occupation.vue";
-import Research from "@/components/Research.vue";
+import Research from "@/components/research/Research.vue";
 import { mapState } from "vuex";
 
 export default {

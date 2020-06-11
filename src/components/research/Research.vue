@@ -44,11 +44,8 @@
         <b-collapse id="housing-collapse" class="mt-2">
           <b-card style="border-color: #138496;">
             <b-row>
-              <b-col sm="5" class="align-self-center">
-                <div class="text-left align-middle">house</div>
-              </b-col>
-              <b-col sm="2" class="align-self-center">
-                <div class="text-left align-middle">type 1</div>
+              <b-col sm="7" class="align-self-center">
+                <div class="text-left align-middle">house type 1</div>
               </b-col>
               <b-col sm="2" class="align-self-center"></b-col>
               <b-col sm="3" class="align-self-center">
@@ -57,11 +54,8 @@
             </b-row>
 
             <b-row>
-              <b-col sm="5" class="align-self-center">
-                <div class="text-left align-middle">house</div>
-              </b-col>
-              <b-col sm="2" class="align-self-center">
-                <div class="text-left align-middle">type 2</div>
+              <b-col sm="7" class="align-self-center">
+                <div class="text-left align-middle">house type 2</div>
               </b-col>
               <b-col sm="2" class="align-self-center">
                 <b-button block v-b-toggle.collapse-housing-1 variant="info">Info</b-button>
@@ -72,6 +66,9 @@
               <b-col sm="12">
                 <b-collapse id="collapse-housing-1" class="mt-2">
                   <b-card>
+                    <p>prerequisits</p>
+                    <p>cost</p>
+                    <p>capability</p>
                     <ul class="info">
                       <li class="text-left">
                         <BIconCheckSquare style="color: green;" /> house type 1
@@ -86,11 +83,8 @@
             </b-row>
 
             <b-row>
-              <b-col sm="5" class="align-self-center">
-                <div class="text-left align-middle">house</div>
-              </b-col>
-              <b-col sm="2" class="align-self-center">
-                <div class="text-left align-middle">type 3</div>
+              <b-col sm="7" class="align-self-center">
+                <div class="text-left align-middle">house type 3</div>
               </b-col>
               <b-col sm="2" class="align-self-center">
                 <b-button block v-b-toggle.collapse-housing-2 variant="info">Info</b-button>
@@ -106,6 +100,8 @@
                 </b-collapse>
               </b-col>
             </b-row>
+
+            <ResearchItem />
           </b-card>
         </b-collapse>
       </b-col>
@@ -115,15 +111,18 @@
 
 <script>
 import { mapState } from "vuex";
-import store from "../store/index";
+import store from "@/store/index";
 // import { BIconCheckSquare, BIconXSquare } from 'bootstrap-vue';
 import { BIconXSquare } from "bootstrap-vue";
+import ResearchItem from './ResearchItem'
+// import Research from "@/components/research/Research.vue";
 
 export default {
   name: "Research",
   components: {
     //   BIconCheckSquare,
-    BIconXSquare
+    BIconXSquare,
+    ResearchItem
   },
   methods: {
     research: function() {
